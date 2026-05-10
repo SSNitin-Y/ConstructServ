@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* -------------------------
+   Design tokens (keep yours)
+-------------------------- */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --muted-2: #64748b;
+
+  --card: #ffffff;
+  --card-2: #f8fafc;
+  --border: #e2e8f0;
+
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+
+  --ring: #93c5fd;
+  --danger: #dc2626;
+  --danger-foreground: #ffffff;
+  --success: #16a34a;
+  --warning: #d97706;
+
+  --radius: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #070a12;
+    --foreground: #e5e7eb;
+    --muted: #94a3b8;
+    --muted-2: #64748b;
+
+    --card: #0b1220;
+    --card-2: #0f172a;
+    --border: #1f2937;
+
+    --primary: #60a5fa;
+    --primary-foreground: #07101f;
+
+    --ring: #1d4ed8;
+    --danger: #ef4444;
+    --danger-foreground: #0b1220;
+    --success: #22c55e;
+    --warning: #f59e0b;
+  }
+}
+
+/* Tailwind v4 theme mapping */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
+  --radius-lg: var(--radius);
+}
+
+/* Base */
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+/* ✅ Helpers MUST be inside @layer components */
+@layer components {
+  .container-app {
+    @apply max-w-6xl mx-auto px-4;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-[var(--radius)] shadow-sm;
+  }
+
+  .card-soft {
+    @apply bg-card-2 border border-border rounded-[var(--radius)] shadow-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:opacity-90;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-card-2 border border-transparent;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border border-border hover:bg-card-2;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-danger-foreground hover:opacity-90;
+  }
+
+  /* ✅ IMPORTANT: keep padding general; utilities like pl-10 should override */
+  .input {
+    @apply w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted focus:outline-none;
+    box-shadow: 0 0 0 0 transparent;
+  }
+
+  .input:focus {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--ring) 30%, transparent);
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-semibold border border-border;
+  }
+
+  .badge-success {
+    @apply bg-[color-mix(in_srgb,var(--success)_18%,transparent)] text-[color-mix(in_srgb,var(--success)_85%,var(--foreground))];
+  }
+
+  .badge-warning {
+    @apply bg-[color-mix(in_srgb,var(--warning)_18%,transparent)] text-[color-mix(in_srgb,var(--warning)_85%,var(--foreground))];
+  }
+
+  .badge-danger {
+    @apply bg-[color-mix(in_srgb,var(--danger)_18%,transparent)] text-[color-mix(in_srgb,var(--danger)_85%,var(--foreground))];
+  }
+}

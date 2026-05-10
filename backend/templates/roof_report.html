@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Roof Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 12px; }
+    h1 { font-size: 18px; }
+    .muted { color: #666; }
+    .card { border: 1px solid #ddd; padding: 12px; border-radius: 8px; margin-top: 12px; }
+    ul { padding-left: 18px; }
+  </style>
+</head>
+<body>
+  <h1>Rukmer Roof Inspection Report</h1>
+  <p class="muted">Job: {{ job_id }} {% if media_id %}• Media: {{ media_id }}{% endif %}</p>
+  <p class="muted">Created: {{ created_at }}</p>
+
+  <div class="card">
+    <h2>Summary</h2>
+    <p>{{ report.get("summary", "—") }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Damage Score</h2>
+    <p>{{ report.get("damage_score", "—") }}</p>
+  </div>
+
+  <div class="card">
+    <h2>Issues</h2>
+    <ul>
+      {% for issue in report.get("issues", []) %}
+        <li>{{ issue }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Lifespan Estimate</h2>
+    <p>{{ report.get("lifespan_estimate", "—") }}</p>
+  </div>
+
+  {% if report.get("pdf_error") %}
+    <div class="card">
+      <h2>PDF Warning</h2>
+      <p>{{ report.get("pdf_error") }}</p>
+    </div>
+  {% endif %}
+</body>
+</html>

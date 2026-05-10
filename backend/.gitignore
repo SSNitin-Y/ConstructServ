@@ -1,0 +1,12 @@
+# Ignore environment files
+.env
+.env.*
+
+# Ignore Firebase service account JSON
+firebase_test.json
+firebase_admin_sdk.json
+*.json
+
+# Node / Python / general ignores
+__pycache__/
+*.pyc
