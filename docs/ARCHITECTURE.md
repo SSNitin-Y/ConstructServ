@@ -1,4 +1,4 @@
-# Rukmer GPT – System Architecture
+# ConstructServ – System Architecture
 
 This document describes the full architecture of the RukmerGPT platform, including:
 - High-level system design  
