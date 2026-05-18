@@ -1,4 +1,2 @@
-CORS_ORIGINS: "https://rukmer-frontend-1045276704204.us-central1.run.app,https://rukmer-frontend-1045276704204-1045276704204.us-central1.run.app"
-STORAGE_PROVIDER: "gcs"
-GCS_BUCKET_NAME: "rukmer-llm-gpt"
-GCS_SIGNER_SERVICE_ACCOUNT: "1045276704204-compute@developer.gserviceaccount.com"
+CORS_ORIGINS: "https://rukmer-frontend-1045276704204.us-central1.run.app"
+
