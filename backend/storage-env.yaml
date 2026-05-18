@@ -1,2 +1,1 @@
-STORAGE_PROVIDER: "gcs"
-GCS_BUCKET_NAME: "rukmer-llm-gpt"
+
