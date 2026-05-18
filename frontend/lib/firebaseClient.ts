@@ -11,13 +11,7 @@ import {
 // TODO: replace these values with your own Firebase web app config
 // from the Firebase Console (Project settings -> Your apps -> Web app).
 const firebaseConfig = {
-  apiKey: "AIzaSyCICIKwLbPsblxj15GlkrTRXvbAV923rPE",
-  authDomain: "airy-totality-480617-u3.firebaseapp.com",
-  projectId: "airy-totality-480617-u3",
-  storageBucket: "airy-totality-480617-u3.firebasestorage.app",
-  messagingSenderId: "1045276704204",
-  appId: "1:1045276704204:web:047b8963ef64ad231f7169",
-  measurementId: "G-FB52EBK77P"
+  
 };
 
 let app;
